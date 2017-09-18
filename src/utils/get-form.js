@@ -18,6 +18,7 @@ export function getFormStateKey(state, model, s = defaultStrategy, currentPath =
 
   s.keys(state).some((key) => {
     const subState = s.get(state, key);
+    console.log('subState', subState, s.get(subState, '$form'))
 
     if (subState && s.get(subState, '$form')) {
       const subStateModel = s.get(subState, '$form.model');
